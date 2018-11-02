@@ -23,24 +23,16 @@ class EditableTimerList extends React.Component {
             project='Web Domination'
             elapsed='8986300'
             runningSince={null}
-            editFormTimer={false}
+            editFormOpen={false}
           />
           <EditableTimer
             title='Learn extreme ironing'
             project='World Domination'
             elapsed='3890985'
             runningSince={null}
-            eidtForm={true}
+            editFormOpen={true}
             />
       </div>
-    );
-  }
-}
-
-class ToggleableTimerForm extends React.Component {
-  render(){
-    return(
-      <div> Toggleable Timer Form component </div>
     );
   }
 }
@@ -142,7 +134,7 @@ class Timer extends React.Component {
               </div>
           </div>
           <div className='ui botton attached blue basic button'>
-            Start 
+            Start
           </div>
       </div>
     );
