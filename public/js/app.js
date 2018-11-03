@@ -1,12 +1,30 @@
 
 class TimersDashboard extends React.Component {
+  state = {
+    timers: [
+      {
+        title: 'Practice squat',
+        project: 'Gym Chores',
+        id: uuid.v4(),
+        elapsed: 5456099,
+        runningSince: Date.now(),
+      },
+      {
+        title: 'Bake squash',
+        project: 'Kitchen Chores',
+        id: uuid.v4(),
+        elapsed: 1273998,
+        runningSince: null,
+      },
+    ],
+  };
   render(){
     return(
       <div className='ui three column centered grid'>
           <div className='column'>
               <EditableTimerList />
               <ToggleableTimerForm
-                isOpen={true}
+                isOpen={false}
               />
           </div>
       </div>
@@ -59,6 +77,24 @@ class EditableTimer extends React.Component {
   }
 }
 
+class ToggleableTimerForm extends React.Component {
+  render(){
+    if (this.props.isOpen) {
+      return(
+        <TimerForm />
+      );
+    } else {
+      return (
+        <div className='ui basic content center aligned segment'>
+            <button className='ui basic button icon'>
+                <i className='plus icon' />
+            </button>
+        </div>
+      );
+    }
+  }
+}
+
 class TimerForm extends React.Component {
   render(){
     const submitText = this.props.title ? 'Update' : 'Create';
@@ -86,24 +122,6 @@ class TimerForm extends React.Component {
           </div>
       </div>
     );
-  }
-}
-
-class ToggleableTimerForm extends React.Component {
-  render(){
-    if (this.props.isOpen) {
-      return(
-        <TimerForm />
-      );
-    } else {
-      return (
-        <div className='ui basic content center aligned segment'>
-            <button className='ui basic button icon'>
-                <i className='plus icon' />
-            </button>
-        </div>
-      );
-    }
   }
 }
 
