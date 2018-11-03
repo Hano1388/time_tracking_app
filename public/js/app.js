@@ -80,8 +80,11 @@ class EditableTimer extends React.Component {
 }
 
 class ToggleableTimerForm extends React.Component {
+  state = {
+    isOpen: false,
+  };
   render(){
-    if (this.props.isOpen) {
+    if (this.state.isOpen) {
       return(
         <TimerForm />
       );
