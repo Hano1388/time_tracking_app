@@ -2,7 +2,7 @@
 
 1. Ensure you have `npm` installed.
 
-Follow the instructions for your platform [here](https://github.com/npm/npm).
+Follow the instructions for your platform [here](https://github.com/npm/cli).
 
 2. Install all dependencies:
 
